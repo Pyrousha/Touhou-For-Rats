@@ -112,19 +112,21 @@ public class UIController : Singleton<UIController>
             //die
             numLives--;
 
-            Lantern.Instance.OnBomb();
+            if (numLives >= 0)
+                Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 0);
 
-            Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 0);
+            Lantern.Instance.OnBomb();
 
             SetLivesVisuals();
             dying = false;
             numBombs = Mathf.Max(startingBombs, numBombs);
             SetBombsVisuals();
 
-            if (numLives >= 0)
+            if (numLives >= 0) {
                 Bomb.Instance.Boom();
+            }
 
-            if (numLives <= 0) {
+            if (numLives < 0) {
                 OnGameOver();
             }
         }

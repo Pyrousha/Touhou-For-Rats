@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     private float nextShootTime;
     [SerializeField] private int bulletSpread;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private GameObject pickupPrefab;
 
 
     private EnemyType indexID;
@@ -212,6 +213,13 @@ public class Enemy : MonoBehaviour
     {
         AudioManager.Instance.Play(AudioType.ENEMY_DEATH);
         UIController.Instance.GainScore(50);
+
+        // TODO replace w/ pools
+        GameObject drop = Instantiate(pickupPrefab);
+        drop.GetComponent<Pickup>().RollType();
+        drop.transform.position = transform.position;
+
+
         ReturnToPool();
     }
 

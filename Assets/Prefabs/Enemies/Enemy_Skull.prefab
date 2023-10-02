@@ -108,6 +108,7 @@ MonoBehaviour:
   reloadTime: 2
   bulletSpread: 10
   bulletSpeed: 5
+  pickupPrefab: {fileID: 3061804451959845734, guid: 8ecba216fe4146f45bccf97812b6cc59, type: 3}
 --- !u!50 &2904233667427334397
 Rigidbody2D:
   serializedVersion: 4

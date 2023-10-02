@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1/128
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31140e285b849d44888a9c0dfe9780a7, type: 2}
   m_sharedMaterial: {fileID: 3269922141108842566, guid: 31140e285b849d44888a9c0dfe9780a7, type: 2}
@@ -3973,7 +3973,7 @@ MonoBehaviour:
   numBombs: 2
   hiScoreText: {fileID: 0}
   scoreText: {fileID: 0}
-  powerText: {fileID: 0}
+  powerText: {fileID: 116589506647278682}
   gameOverUI: {fileID: 2702169339495893890}
   gameOverScore: {fileID: 5093151905240555480}
   gameOverHiScore: {fileID: 2501371585774507418}
