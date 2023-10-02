@@ -15,9 +15,10 @@ public class UIController : Singleton<UIController>
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI powerText;
 
-    [SerializeField] private GameObject gameOverUI;
-    [SerializeField] private TextMeshProUGUI gameOverScore;
-    [SerializeField] private TextMeshProUGUI gameOverHiScore;
+    [SerializeField] private GameObject stageEndUI;
+    [SerializeField] private TextMeshProUGUI stageEndTitle;
+    [SerializeField] private TextMeshProUGUI stageEndScore;
+    [SerializeField] private TextMeshProUGUI stageEndHiScore;
 
     private List<Transform> livesIcons;
     private List<Transform> bombsIcons;
@@ -200,17 +201,27 @@ public class UIController : Singleton<UIController>
 
         Time.timeScale = 0;
 
-        gameOverUI.SetActive(true);
-        gameOverHiScore.text = hiScore.ToString();
-        gameOverScore.text = score.ToString();
+        stageEndUI.SetActive(true);
+        stageEndTitle.text = "You Died";
+        stageEndHiScore.text = hiScore.ToString();
+        stageEndScore.text = score.ToString();
     }
 
     public void OnGameReset() {
         Time.timeScale = 1;
 
-        gameOverUI.SetActive(false);
+        stageEndUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Player.Instance.OnReset();
+    }
+
+    public void OnStageCleared() {
+        Time.timeScale = 0;
+
+        stageEndUI.SetActive(true);
+        stageEndTitle.text = "Stage Clear!";
+        stageEndHiScore.text = hiScore.ToString();
+        stageEndScore.text = score.ToString();
     }
 
     public void OnGameQuit() {

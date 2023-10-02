@@ -1108,7 +1108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5754117869145024043}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: StageEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3974,9 +3974,10 @@ MonoBehaviour:
   hiScoreText: {fileID: 0}
   scoreText: {fileID: 0}
   powerText: {fileID: 116589506647278682}
-  gameOverUI: {fileID: 2702169339495893890}
-  gameOverScore: {fileID: 5093151905240555480}
-  gameOverHiScore: {fileID: 2501371585774507418}
+  stageEndUI: {fileID: 2702169339495893890}
+  stageEndTitle: {fileID: 1987379476551553593}
+  stageEndScore: {fileID: 5093151905240555480}
+  stageEndHiScore: {fileID: 2501371585774507418}
   deathBombTime: 0.5
 --- !u!1 &9026943048429041045
 GameObject:
