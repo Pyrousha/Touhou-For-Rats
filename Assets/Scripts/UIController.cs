@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -90,7 +89,8 @@ public class UIController : Singleton<UIController>
         SetBombsVisuals();
     }
 
-    public void GainPower() {
+    public void GainPower()
+    {
         power++;
 
         if (power % 10 == 0)
@@ -122,11 +122,13 @@ public class UIController : Singleton<UIController>
             numBombs = Mathf.Max(startingBombs, numBombs);
             SetBombsVisuals();
 
-            if (numLives >= 0) {
+            if (numLives >= 0)
+            {
                 Bomb.Instance.Boom();
             }
 
-            if (numLives < 0) {
+            if (numLives < 0)
+            {
                 OnGameOver();
             }
         }
@@ -164,8 +166,10 @@ public class UIController : Singleton<UIController>
         }
     }
 
-    public Pickup.PickupType RollPickupType() {
-        if (score > scoreThreshold) {
+    public Pickup.PickupType RollPickupType()
+    {
+        if (score > scoreThreshold)
+        {
             scoreThreshold += 100000;
 
             return Pickup.PickupType.life;
@@ -195,7 +199,8 @@ public class UIController : Singleton<UIController>
         }
     }
 
-    public void OnGameOver() {
+    public void OnGameOver()
+    {
         Player.Instance.OnDie();
 
         Time.timeScale = 0;
@@ -205,7 +210,8 @@ public class UIController : Singleton<UIController>
         gameOverScore.text = score.ToString();
     }
 
-    public void OnGameReset() {
+    public void OnGameReset()
+    {
         Time.timeScale = 1;
 
         gameOverUI.SetActive(false);
@@ -213,7 +219,8 @@ public class UIController : Singleton<UIController>
         Player.Instance.OnReset();
     }
 
-    public void OnGameQuit() {
+    public void OnGameQuit()
+    {
         Application.Quit();
     }
 }

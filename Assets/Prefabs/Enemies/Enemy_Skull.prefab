@@ -102,7 +102,7 @@ MonoBehaviour:
   accelSpeed: 1
   maxSpeed: 6
   frictionSpeed: 0.25
-  startingHp: 2
+  startingHp: 4
   bulletType: 2
   numBullets: 0
   reloadTime: 2

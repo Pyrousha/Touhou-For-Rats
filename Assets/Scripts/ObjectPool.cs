@@ -205,6 +205,11 @@ public class ObjectPool : Singleton<ObjectPool>
 
     public Vector3 GetClosestEnemy(Vector3 bulletPos)
     {
+        if (boss != null)
+        {
+            return boss.transform.position - bulletPos;
+        }
+
         float smallestDist = 10000;
         Vector3 toEnemy = Vector3.zero;
 
@@ -220,4 +225,11 @@ public class ObjectPool : Singleton<ObjectPool>
 
         return toEnemy;
     }
+
+    private Transform boss;
+    public void SetBoss(Transform boss)
+    {
+        this.boss = boss;
+    }
+
 }

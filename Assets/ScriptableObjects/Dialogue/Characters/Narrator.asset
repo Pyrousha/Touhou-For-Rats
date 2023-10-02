@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb1d7b5ed2c152419536425f7f28b9c, type: 3}
   m_Name: Narrator
   m_EditorClassIdentifier: 
-  characterName: 
-  defaultPortraitSprite: {fileID: 0}
-  defaultVoice: {fileID: 0}
+  characterName: Narrator
+  defaultPortraitSprite: {fileID: -5814824722473737480, guid: 95ca000884905c345bd4e589d7d4c7e7, type: 3}
+  defaultVoice: {fileID: 8300000, guid: a3b2330f2b802a14abd667a7771a606c, type: 3}
   <OnRight>k__BackingField: 0
