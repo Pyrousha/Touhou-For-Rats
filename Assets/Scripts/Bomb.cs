@@ -19,6 +19,7 @@ public class Bomb : Singleton<Bomb>
         isBooming = true;
         transform.position = Player.Instance.transform.position;
         anim.SetTrigger("Boom");
+        AudioManager.Instance.Play(AudioType.BOMB);
         return true;
     }
 }

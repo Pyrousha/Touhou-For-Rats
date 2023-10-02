@@ -84,14 +84,15 @@ public class UIController : Singleton<UIController>
             //die
             numLives--;
 
-            Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 2);
+            Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 0);
 
             SetLivesVisuals();
             dying = false;
             numBombs = Mathf.Max(startingBombs, numBombs);
             SetBombsVisuals();
 
-            Bomb.Instance.Boom();
+            if (numLives >= 0)
+                Bomb.Instance.Boom();
         }
     }
 
@@ -99,9 +100,10 @@ public class UIController : Singleton<UIController>
     {
         if (numBombs > 0)
         {
+            if (Bomb.Instance.Boom())
+                numBombs--;
+
             SetBombsVisuals();
-            if (Bomb.Instance.Boom()) ;
-            numBombs--;
         }
     }
 }
