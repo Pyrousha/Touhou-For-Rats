@@ -203,4 +203,12 @@ public class Player : Singleton<Player>
     {
         numBullets++;
     }
+
+    public void OnDie() {
+        spriteAnim.SetTrigger("death");
+    }
+
+    public void OnReset() {
+        spriteAnim.SetTrigger("reset");
+    }
 }

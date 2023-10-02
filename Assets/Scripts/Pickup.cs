@@ -10,9 +10,13 @@ public class Pickup : MonoBehaviour
         score, bomb, life
     }
 
+    public void RollType() {
+
+    }
+
     [SerializeField] private PickupType type;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collision2D collision)
     {
         UIController.Instance.GotPickup(type);
     }

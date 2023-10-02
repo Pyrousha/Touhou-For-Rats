@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : Singleton<UIController>
 {
@@ -11,6 +13,11 @@ public class UIController : Singleton<UIController>
 
     [SerializeField] private TextMeshProUGUI hiScoreText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI powerText;
+
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private TextMeshProUGUI gameOverScore;
+    [SerializeField] private TextMeshProUGUI gameOverHiScore;
 
     private List<Transform> livesIcons;
     private List<Transform> bombsIcons;
@@ -24,7 +31,10 @@ public class UIController : Singleton<UIController>
     private int score;
     private int hiScore;
 
+    private int dropCounter;
+    private int scoreThreshold = 100000;
 
+    private int power;
     private void Start()
     {
         livesIcons = Utils.GetChildrenFromParent(livesParent);
@@ -80,6 +90,15 @@ public class UIController : Singleton<UIController>
         SetBombsVisuals();
     }
 
+    public void GainPower() {
+        power++;
+
+        if (power % 10 == 0)
+            Player.Instance.PickupNewBullet();
+
+        powerText.text = power.ToString();
+    }
+
     private void Update()
     {
         if (InputHandler.Instance.Cancel_Bomb.Down && numBombs > 0)
@@ -104,6 +123,10 @@ public class UIController : Singleton<UIController>
 
             if (numLives >= 0)
                 Bomb.Instance.Boom();
+
+            if (numLives <= 0) {
+                OnGameOver();
+            }
         }
     }
 
@@ -123,16 +146,39 @@ public class UIController : Singleton<UIController>
         switch (type)
         {
             case Pickup.PickupType.power:
+                GainPower();
                 break;
             case Pickup.PickupType.score:
+                GainScore(500);
                 break;
             case Pickup.PickupType.bomb:
+                GainBomb();
                 break;
             case Pickup.PickupType.life:
+                GainLife();
                 break;
             default:
                 break;
         }
+    }
+
+    public Pickup.PickupType RollPickupType() {
+        if (score > scoreThreshold) {
+            scoreThreshold += 100000;
+
+            return Pickup.PickupType.life;
+        }
+
+
+        Pickup.PickupType type = Pickup.PickupType.score;
+
+        if (dropCounter % 20 == 0)
+            type = Pickup.PickupType.bomb;
+        else if (dropCounter % 2 == 0)
+            type = Pickup.PickupType.power;
+
+        dropCounter++;
+        return type;
     }
 
     public void GainScore(int _scoreToGain)
@@ -145,5 +191,27 @@ public class UIController : Singleton<UIController>
             hiScore = score;
             hiScoreText.text = hiScore.ToString();
         }
+    }
+
+    public void OnGameOver() {
+        Player.Instance.OnDie();
+
+        Time.timeScale = 0;
+
+        gameOverUI.SetActive(true);
+        gameOverHiScore.text = hiScore.ToString();
+        gameOverScore.text = score.ToString();
+    }
+
+    public void OnGameReset() {
+        Time.timeScale = 1;
+
+        gameOverUI.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Player.Instance.OnReset();
+    }
+
+    public void OnGameQuit() {
+        Application.Quit();
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5942031852497653450}
   - component: {fileID: 9076045539276475983}
   m_Layer: 13
-  m_Name: BulletPickup
+  m_Name: Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 810735489
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4627265127336177030, guid: e2605ad80e867cb4fa50ff7ce92f466f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9201a0e61f5f9d746b32360f9a4cb899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!61 &9076045539276475983
 BoxCollider2D:
   m_ObjectHideFlags: 0
