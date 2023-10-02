@@ -199,6 +199,13 @@ public class Enemy : MonoBehaviour
             if (currHp <= 0)
                 ReturnToPool();
         }
+        else if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.BombLayer))
+        {
+            //Hit by bomb, take damage
+            currHp -= Player.Instance.BombDamage;
+            if (currHp <= 0)
+                ReturnToPool();
+        }
     }
 
     private void ReturnToPool()

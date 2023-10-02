@@ -1,0 +1,24 @@
+using UnityEngine;
+
+public class Bomb : Singleton<Bomb>
+{
+    [SerializeField] private Animator anim;
+
+    private bool isBooming;
+
+    public void BombEnd()
+    {
+        isBooming = false;
+    }
+
+    public bool Boom()
+    {
+        if (isBooming)
+            return false;
+
+        isBooming = true;
+        transform.position = Player.Instance.transform.position;
+        anim.SetTrigger("Boom");
+        return true;
+    }
+}

@@ -25,6 +25,7 @@ public class Player : Singleton<Player>
     [SerializeField] private float bulletSpeed;
     private float currBulletSpread;
     [field: SerializeField] public float KickDamage { get; private set; }
+    [field: SerializeField] public float BombDamage { get; private set; }
 
 
     [SerializeField] private float chargeDuration;
