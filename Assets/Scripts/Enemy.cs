@@ -188,16 +188,16 @@ public class Enemy : MonoBehaviour
         if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.PlayerBulletLayer))
         {
             //Hit by bullet, take damage
-            currHp -= collision.GetComponent<Bullet>().Damage;
+            OnHit(collision.GetComponent<Bullet>().Damage);
             if (currHp <= 0)
-                ReturnToPool();
+                OnDeath();
         }
         else if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.KickLayer))
         {
             //Hit by bullet, take damage
-            currHp -= Player.Instance.KickDamage;
+            OnHit(Player.Instance.KickDamage);
             if (currHp <= 0)
-                ReturnToPool();
+                OnDeath();
         }
         else if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.BombLayer))
         {
@@ -206,6 +206,16 @@ public class Enemy : MonoBehaviour
             if (currHp <= 0)
                 ReturnToPool();
         }
+    }
+
+    private void OnDeath() {
+        AudioManager.Instance.Play(AudioType.ENEMY_DEATH);
+        ReturnToPool();
+    }
+
+    private void OnHit(float damage) {
+        currHp -= damage;
+        AudioManager.Instance.Play(AudioType.PLAYER_HIT);
     }
 
     private void ReturnToPool()

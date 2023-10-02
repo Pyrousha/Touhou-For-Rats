@@ -37,6 +37,7 @@ public class Player : Singleton<Player>
     private float nextChargeTime;
     private float nextChargeAnimTime;
     private bool startedChargeAnim;
+    private bool chargeFXReady;
     private float kickDuration = 0.49f;
 
     private Rigidbody2D rb;
@@ -100,18 +101,20 @@ public class Player : Singleton<Player>
             {
                 isCharging = true;
                 startedChargeAnim = false;
+                chargeFXReady = true;
 
                 nextChargeAnimTime = Time.time + chargeDuration - chargeAnimDuration;
                 chargeStartTime = Time.time;
                 spriteAnim.SetTrigger("StartCharge");
+                AudioManager.Instance.Play(AudioType.KICK_START);
             }
-            else
+            else if (!startedChargeAnim && Time.time >= nextChargeAnimTime)
             {
-                if (!startedChargeAnim && Time.time >= nextChargeAnimTime)
-                {
-                    startedChargeAnim = true;
-                    chargeAnim.SetTrigger("StartCharge");
-                }
+                startedChargeAnim = true;
+                chargeAnim.SetTrigger("StartCharge");
+            } else if (chargeFXReady && Time.time >= chargeStartTime + chargeDuration){
+                chargeFXReady = false;
+                AudioManager.Instance.Play(AudioType.KICK_READY);
             }
         }
         else
@@ -142,6 +145,7 @@ public class Player : Singleton<Player>
                 //Rapid Fire
                 if (Time.time >= nextShootTime)
                 {
+                    AudioManager.Instance.Play(AudioType.PLAYER_SHOOT);
                     nextShootTime = Time.time + reloadTime;
 
                     //Spawn bullets

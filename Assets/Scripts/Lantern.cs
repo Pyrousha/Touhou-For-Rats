@@ -57,6 +57,8 @@ public class Lantern : Singleton<Lantern>
             isMoving = true;
             anim.SetTrigger("Hit");
             SpawnBullets();
+
+            AudioManager.Instance.Play(AudioType.LANTERN_HIT);
         }
     }
 
