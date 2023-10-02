@@ -139,6 +139,86 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: pickup_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 20
+      width: 8
+      height: 8
+    spriteID: b98909bc41ffade4099d16fc8a2b3a88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 20}
+  - name: pickup_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 8
+      height: 8
+    spriteID: 52f11222e2697334d93f26499e1b089d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 36}
+  - name: pickup_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 8
+      height: 8
+    spriteID: 11634a093eff6dd4689158c9350cf6d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: pickup_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 4
+      width: 8
+      height: 8
+    spriteID: 09b4f24aca36e3441a0988ff17f82501
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,7 +228,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: pickup
+    - name: pickup_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
@@ -156,6 +236,38 @@ ScriptedImporter:
         width: 8
         height: 8
       spriteId: 01ee7cdcc939ce747805453dad3e0495
+    - name: pickup_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 8
+        height: 8
+      spriteId: b98909bc41ffade4099d16fc8a2b3a88
+    - name: pickup_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 8
+        height: 8
+      spriteId: 52f11222e2697334d93f26499e1b089d
+    - name: pickup_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 8
+        height: 8
+      spriteId: 11634a093eff6dd4689158c9350cf6d8
+    - name: pickup_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 8
+        height: 8
+      spriteId: 09b4f24aca36e3441a0988ff17f82501
     linkedCells: []
     parentIndex: -1
   platformSettings:

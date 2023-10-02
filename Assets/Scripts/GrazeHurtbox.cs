@@ -6,5 +6,6 @@ public class GrazeHurtbox : MonoBehaviour
     {
         //TODO: Hit Graze
         Debug.Log("Graze!");
+        UIController.Instance.GainScore(25);
     }
 }

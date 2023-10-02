@@ -32,7 +32,6 @@ public class Lantern : Singleton<Lantern>
             if (lightHp <= 0)
             {
                 UIController.Instance.LoseLife();
-                isInDark = false;
             }
         }
         else
@@ -103,5 +102,12 @@ public class Lantern : Singleton<Lantern>
     {
         isInDark = true;
         SoulDrain.Instance.StartParticle();
+    }
+
+    public void OnBomb()
+    {
+        lightHp = 1;
+        lightSlider.gameObject.SetActive(false);
+        lightSlider.value = lightHp;
     }
 }

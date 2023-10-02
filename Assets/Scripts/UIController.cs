@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIController : Singleton<UIController>
@@ -7,6 +8,10 @@ public class UIController : Singleton<UIController>
     [SerializeField] private Transform bombsParent;
     [SerializeField] private int numLives;
     [SerializeField] private int numBombs;
+
+    [SerializeField] private TextMeshProUGUI hiScoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
     private List<Transform> livesIcons;
     private List<Transform> bombsIcons;
 
@@ -15,6 +20,9 @@ public class UIController : Singleton<UIController>
     [SerializeField] private float deathBombTime;
     private bool dying = false;
     private float dieTime;
+
+    private int score;
+    private int hiScore;
 
 
     private void Start()
@@ -77,12 +85,15 @@ public class UIController : Singleton<UIController>
         if (InputHandler.Instance.Cancel_Bomb.Down && numBombs > 0)
         {
             dying = false;
+            Lantern.Instance.OnBomb();
             UseBomb();
         }
         else if (dying && Time.time >= dieTime)
         {
             //die
             numLives--;
+
+            Lantern.Instance.OnBomb();
 
             Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 0);
 
@@ -104,6 +115,35 @@ public class UIController : Singleton<UIController>
                 numBombs--;
 
             SetBombsVisuals();
+        }
+    }
+
+    public void GotPickup(Pickup.PickupType type)
+    {
+        switch (type)
+        {
+            case Pickup.PickupType.power:
+                break;
+            case Pickup.PickupType.score:
+                break;
+            case Pickup.PickupType.bomb:
+                break;
+            case Pickup.PickupType.life:
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void GainScore(int _scoreToGain)
+    {
+        score += _scoreToGain;
+        scoreText.text = score.ToString();
+
+        if (score > hiScore)
+        {
+            hiScore = score;
+            hiScoreText.text = hiScore.ToString();
         }
     }
 }

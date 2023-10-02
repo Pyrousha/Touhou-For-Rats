@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3359778460628219728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4740578424857113606}
+  - component: {fileID: 6905376266768930301}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4740578424857113606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359778460628219728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6905376266768930301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359778460628219728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99be98d1000ae494f80cdd609eab4f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DEBUG_START_TIME: 0
+  pathsParent: {fileID: 0}
+  enemyIndices:
+  - {fileID: 5272623626332460144, guid: 2ffb1f5c381491d43b93f0296e735f0a, type: 3}
+  - {fileID: 5272623626332460144, guid: 2fb624fa9f5af4a4dbbd713c30bff2c6, type: 3}
+  enemySpawnPattern_Serialized:
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 8
+    <startSpawnTime>k__BackingField: 1
+    <spawnInterval>k__BackingField: 0.1
+    <offsetPos>k__BackingField: {x: -0.75, y: 0, z: 0}
+    <pathIndices>k__BackingField: 00000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 8
+    <startSpawnTime>k__BackingField: 5.5
+    <spawnInterval>k__BackingField: 0.1
+    <offsetPos>k__BackingField: {x: 0.75, y: 0, z: 0}
+    <pathIndices>k__BackingField: 01000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 9
+    <startSpawnTime>k__BackingField: 10
+    <spawnInterval>k__BackingField: 0.2
+    <offsetPos>k__BackingField: {x: 1, y: 0, z: 0}
+    <pathIndices>k__BackingField: 02000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 10
+    <startSpawnTime>k__BackingField: 16
+    <spawnInterval>k__BackingField: 0.15
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 0000000001000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 8
+    <startSpawnTime>k__BackingField: 22
+    <spawnInterval>k__BackingField: 0.15
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 03000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 8
+    <startSpawnTime>k__BackingField: 25
+    <spawnInterval>k__BackingField: 0.15
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 03000000
+  - <enemyTypeIndices>k__BackingField: 01000000
+    <numEnemies>k__BackingField: 10
+    <startSpawnTime>k__BackingField: 28.5
+    <spawnInterval>k__BackingField: 0.2
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 06000000
+  - <enemyTypeIndices>k__BackingField: 01000000
+    <numEnemies>k__BackingField: 10
+    <startSpawnTime>k__BackingField: 30
+    <spawnInterval>k__BackingField: 0.2
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 05000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 10
+    <startSpawnTime>k__BackingField: 32
+    <spawnInterval>k__BackingField: 0.1
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 0300000004000000

@@ -208,13 +208,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnDeath() {
+    private void OnDeath()
+    {
         AudioManager.Instance.Play(AudioType.ENEMY_DEATH);
+        UIController.Instance.GainScore(50);
         ReturnToPool();
     }
 
-    private void OnHit(float damage) {
+    private void OnHit(float damage)
+    {
         currHp -= damage;
+        UIController.Instance.GainScore(10);
         AudioManager.Instance.Play(AudioType.PLAYER_HIT);
     }
 
