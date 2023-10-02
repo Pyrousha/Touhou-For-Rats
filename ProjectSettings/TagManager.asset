@@ -56,6 +56,9 @@ TagManager:
   - name: Shadows
     uniqueID: 4148881659
     locked: 0
+  - name: ScreenFX
+    uniqueID: 490641349
+    locked: 0
   - name: UI
     uniqueID: 3847006621
     locked: 0
