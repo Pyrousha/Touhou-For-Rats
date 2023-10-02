@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77e930972665f4f9a9210fba3c3022, type: 3}
+  m_Name: Necro Pre
+  m_EditorClassIdentifier: 
+  <DialogueLines>k__BackingField:
+  - Speaker: {fileID: 11400000, guid: 7878295a09ab8f24d970821bd39842ba, type: 2}
+    Text: "The jig\u2019s up, it would seem. It was a good thing the croc and I had
+      going here. Money for both of us, and a rain of demons for me. Maybe it\u2019s
+      not too late for me to turn this around. \r"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: fecca1b425617d24a9b2ef34654c5da7, type: 2}
+    Text: "Squeak squeak squeak, squeak squeak squeak. Squeak squeak?\r"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: 7878295a09ab8f24d970821bd39842ba, type: 2}
+    Text: "You\u2019re curious about my art? This incantation works like a magnet
+      for your soul. You can resist, but the closer you are, the stronger the casino
+      pulls on you, lures you. What I don\u2019t understand is how you could have
+      made it this far without succumbing to its influence."
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: fecca1b425617d24a9b2ef34654c5da7, type: 2}
+    Text: "Half of my soul went with my wife \u2026 I\u2019m immune to your animancy.\r"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: fecca1b425617d24a9b2ef34654c5da7, type: 2}
+    Text: And also this lantern casts a protective aura.
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: 7878295a09ab8f24d970821bd39842ba, type: 2}
+    Text: "How tragic. Why don\u2019t I reunite you two?"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  <NextDialogueObject>k__BackingField: {fileID: 0}
+  <Responses>k__BackingField: []

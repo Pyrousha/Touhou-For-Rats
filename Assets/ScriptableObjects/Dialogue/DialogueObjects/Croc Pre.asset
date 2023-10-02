@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77e930972665f4f9a9210fba3c3022, type: 3}
+  m_Name: Croc Pre
+  m_EditorClassIdentifier: 
+  <DialogueLines>k__BackingField:
+  - Speaker: {fileID: 11400000, guid: dc5b6981e9c661c4cbd70f3654271a4c, type: 2}
+    Text: "Ah, an outsider interferes with my business plan. Look, profits are up
+      600%. You wouldn\u2019t want me to disappoint the shareholders next quarter,
+      would you?\r"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: fecca1b425617d24a9b2ef34654c5da7, type: 2}
+    Text: "Squeak squeak squeak?\r"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: dc5b6981e9c661c4cbd70f3654271a4c, type: 2}
+    Text: "Now why would I share my secrets with you? Don\u2019t want competition
+      souring my profits."
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: dc5b6981e9c661c4cbd70f3654271a4c, type: 2}
+    Text: "I\u2019m going to teach you a thing or two about laissez-faire economics.
+      You know French? It means \u201Chands off!\u201D\r"
+    OptionalOverrides:
+      PortraitImageOverride: {fileID: 0}
+      VoiceClipOverride: {fileID: 0}
+  <NextDialogueObject>k__BackingField: {fileID: 0}
+  <Responses>k__BackingField: []
