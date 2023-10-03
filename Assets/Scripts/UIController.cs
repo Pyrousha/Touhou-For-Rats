@@ -106,6 +106,7 @@ public class UIController : Singleton<UIController>
         {
             dying = false;
             Lantern.Instance.OnBomb();
+            PlayerHurtbox.Instance.GiveIFrames();
             UseBomb();
         }
         else if (dying && Time.time >= dieTime)
@@ -113,7 +114,7 @@ public class UIController : Singleton<UIController>
             //die
             numLives--;
 
-            PlayerHurtbox.Instance.OnLoseLife();
+            PlayerHurtbox.Instance.GiveIFrames();
 
             if (numLives >= 0)
                 Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 0);

@@ -5,7 +5,7 @@ public class PlayerHurtbox : Singleton<PlayerHurtbox>
     private bool invincible = false;
     private float nextDamagableTime;
 
-    public void OnLoseLife()
+    public void GiveIFrames()
     {
         invincible = true;
         nextDamagableTime = Time.time + 0.25f;
