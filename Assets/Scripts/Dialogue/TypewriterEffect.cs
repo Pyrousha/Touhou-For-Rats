@@ -49,6 +49,7 @@ public class TypewriterEffect : MonoBehaviour
 
     private IEnumerator TypeText(string textToType, TMP_Text textLabel, AudioClip voiceClip)
     {
+        textLabel.color = Color.clear;
         textLabel.text = textToType;
 
         yield return null;
@@ -59,7 +60,6 @@ public class TypewriterEffect : MonoBehaviour
         TMP_TextInfo textInfo = textLabel.textInfo;
         Color32[] newVertexColors;
         Color32 c0 = textColor;
-        textLabel.color = Color.clear;
 
         float t = 0;
         int charIndex = 0;
@@ -79,8 +79,8 @@ public class TypewriterEffect : MonoBehaviour
         {
             int lastCharIndex = charIndex;
 
-            if (InputHandler.Instance.SkipText.Holding)
-                t += Time.deltaTime * writingSpeed * 1200000000; //skip speed
+            if (InputHandler.Instance.SkipText.Holding || InputHandler.Instance.Interact_Shoot.Down)
+                t += writingSpeed * 100; //skip speed
             else
                 t += Time.deltaTime * writingSpeed; //normal speed
 

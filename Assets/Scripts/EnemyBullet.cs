@@ -6,6 +6,6 @@ public class EnemyBullet : Bullet
     {
         //Hit Something other than graze, delete
         if (!LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.GrazeLayer))
-            ObjectPool.Instance.AddToBulletPool(this, bulletType);
+            ObjectPool.Instance.AddToBulletPool(this);
     }
 }

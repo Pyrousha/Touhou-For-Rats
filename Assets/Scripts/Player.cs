@@ -8,6 +8,7 @@ public class Player : Singleton<Player>
     [SerializeField] private Animator KickParent;
     [SerializeField] private Transform chargeParent;
     [SerializeField] private Animator chargeAnim;
+    [SerializeField] private ParticleSystem grazeParticle;
     private Animator spriteAnim;
     private bool hitboxShowing = true;
 
@@ -84,14 +85,17 @@ public class Player : Singleton<Player>
         if (rb.velocity.sqrMagnitude > 0)
             facingDir = rb.velocity.normalized;
 
+        if (DialogueUI.Instance.isOpen || Time.timeScale == 0)
+        {
+            hitboxObj.SetActive(false);
+            return;
+        }
+
         if (focusing != hitboxShowing)
         {
             hitboxShowing = !hitboxShowing;
             hitboxObj.SetActive(hitboxShowing);
         }
-
-        if (DialogueUI.Instance.isOpen)
-            return;
 
         chargeAnim.SetBool("HoldingCharge", InputHandler.Instance.Interact_Shoot.Holding);
 
@@ -112,7 +116,9 @@ public class Player : Singleton<Player>
             {
                 startedChargeAnim = true;
                 chargeAnim.SetTrigger("StartCharge");
-            } else if (chargeFXReady && Time.time >= chargeStartTime + chargeDuration){
+            }
+            else if (chargeFXReady && Time.time >= chargeStartTime + chargeDuration)
+            {
                 chargeFXReady = false;
                 AudioManager.Instance.Play(AudioType.KICK_READY);
             }
@@ -204,11 +210,18 @@ public class Player : Singleton<Player>
         numBullets++;
     }
 
-    public void OnDie() {
+    public void OnDie()
+    {
         spriteAnim.SetTrigger("death");
     }
 
-    public void OnReset() {
+    public void OnReset()
+    {
         spriteAnim.SetTrigger("reset");
+    }
+
+    public void ShowGrazeEffect()
+    {
+        grazeParticle.Play();
     }
 }

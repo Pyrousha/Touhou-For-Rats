@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Gabaghoul
   defaultPortraitSprite: {fileID: 6177829389700803886, guid: b6bbd2ac8460cca428f2c96a41619c59, type: 3}
-  defaultVoice: {fileID: 8300000, guid: 76c65470e4faace4bb0c4d5862dc0249, type: 3}
+  defaultVoice: {fileID: 8300000, guid: c0724812413329f4089a14ea6e323793, type: 3}
   <OnRight>k__BackingField: 1

@@ -1,12 +1,25 @@
 using UnityEngine;
 
-public class PlayerHurtbox : MonoBehaviour
+public class PlayerHurtbox : Singleton<PlayerHurtbox>
 {
+    private bool invincible = false;
+    private float nextDamagableTime;
+
+    public void OnLoseLife()
+    {
+        invincible = true;
+        nextDamagableTime = Time.time + 0.25f;
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.LanternLayer))
         {
-            UIController.Instance.LoseLife();
+            if (!invincible || (invincible && Time.time >= nextDamagableTime))
+            {
+                invincible = false;
+                UIController.Instance.LoseLife();
+            }
         }
     }
 }

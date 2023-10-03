@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static ObjectPool;
 
-public class Boss1 : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     [SerializeField] protected float accelSpeed;
     [SerializeField] protected float maxSpeed;
@@ -233,11 +233,11 @@ public class Boss1 : MonoBehaviour
             //Hit by bullet, take damage
             OnHit(Player.Instance.KickDamage);
         }
-        else if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.BombLayer))
-        {
-            //Hit by bomb, take damage
-            OnHit(Player.Instance.BombDamage);
-        }
+        //else if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.BombLayer))
+        //{
+        //    //Hit by bomb, take damage
+        //    OnHit(Player.Instance.BombDamage);
+        //}
     }
 
     private void OnDeath()
@@ -245,6 +245,8 @@ public class Boss1 : MonoBehaviour
         if (dead)
             return;
 
+        isMoving = false;
+        ObjectPool.Instance.DestroyAllBullets();
         GetComponent<DialogueActivator>().TryInteract();
 
         AudioManager.Instance.Play(AudioType.ENEMY_DEATH);

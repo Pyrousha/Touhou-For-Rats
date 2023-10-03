@@ -29,10 +29,10 @@ public class UIController : Singleton<UIController>
     private float dieTime;
 
     private int score;
-    private int hiScore;
+    private static int hiScore;
 
     private int dropCounter;
-    private int scoreThreshold = 100000;
+    private int scoreThreshold = 20000;
 
     private int power;
     private void Start()
@@ -44,6 +44,8 @@ public class UIController : Singleton<UIController>
         SetBombsVisuals();
 
         startingBombs = numBombs;
+
+        hiScoreText.text = hiScore.ToString();
     }
 
     private void SetLivesVisuals()
@@ -57,6 +59,7 @@ public class UIController : Singleton<UIController>
     public void GainLife()
     {
         numLives = Mathf.Min(numLives + 1, livesIcons.Count);
+        AudioManager.Instance.Play(AudioType.PICKUP);
         SetLivesVisuals();
     }
 
@@ -68,10 +71,7 @@ public class UIController : Singleton<UIController>
         dying = true;
         dieTime = Time.time + deathBombTime;
 
-        if (numLives > 0)
-            AudioManager.Instance.Play(AudioType.SQUEAK);
-        else
-            AudioManager.Instance.Play(AudioType.DEATH);
+        AudioManager.Instance.Play(AudioType.SQUEAK);
         SetLivesVisuals();
     }
 
@@ -113,6 +113,8 @@ public class UIController : Singleton<UIController>
             //die
             numLives--;
 
+            PlayerHurtbox.Instance.OnLoseLife();
+
             if (numLives >= 0)
                 Player.Instance.transform.position = Lantern.Instance.transform.position + new Vector3(0, -1, 0);
 
@@ -123,13 +125,11 @@ public class UIController : Singleton<UIController>
             numBombs = Mathf.Max(startingBombs, numBombs);
             SetBombsVisuals();
 
-            if (numLives >= 0)
-            {
-                Bomb.Instance.Boom();
-            }
+            Bomb.Instance.Boom();
 
             if (numLives < 0)
             {
+                AudioManager.Instance.Play(AudioType.DEATH);
                 OnGameOver();
             }
         }
@@ -171,20 +171,20 @@ public class UIController : Singleton<UIController>
     {
         if (score > scoreThreshold)
         {
-            scoreThreshold += 100000;
-
+            scoreThreshold += 20000;
             return Pickup.PickupType.life;
         }
 
 
         Pickup.PickupType type = Pickup.PickupType.score;
 
+        dropCounter++;
+
         if (dropCounter % 20 == 0)
             type = Pickup.PickupType.bomb;
         else if (dropCounter % 2 == 0)
             type = Pickup.PickupType.power;
 
-        dropCounter++;
         return type;
     }
 
@@ -221,7 +221,8 @@ public class UIController : Singleton<UIController>
         Player.Instance.OnReset();
     }
 
-    public void OnStageCleared() {
+    public void OnStageCleared()
+    {
         Time.timeScale = 0;
 
         stageEndUI.SetActive(true);
@@ -230,7 +231,8 @@ public class UIController : Singleton<UIController>
         stageEndScore.text = score.ToString();
     }
 
-    public void OnGameQuit() {
+    public void OnGameQuit()
+    {
         Application.Quit();
     }
 }

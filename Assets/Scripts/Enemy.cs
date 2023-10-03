@@ -212,7 +212,7 @@ public class Enemy : MonoBehaviour
     private void OnDeath()
     {
         AudioManager.Instance.Play(AudioType.ENEMY_DEATH);
-        UIController.Instance.GainScore(50);
+        UIController.Instance.GainScore(100);
 
         // TODO replace w/ pools
         GameObject drop = Instantiate(pickupPrefab);

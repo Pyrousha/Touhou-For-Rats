@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Narrator
   defaultPortraitSprite: {fileID: -5814824722473737480, guid: 95ca000884905c345bd4e589d7d4c7e7, type: 3}
-  defaultVoice: {fileID: 8300000, guid: a3b2330f2b802a14abd667a7771a606c, type: 3}
+  defaultVoice: {fileID: 8300000, guid: 3e9ad27933a93bf4db6f4d6a99ba7d72, type: 3}
   <OnRight>k__BackingField: 0

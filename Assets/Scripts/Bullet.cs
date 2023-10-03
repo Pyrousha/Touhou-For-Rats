@@ -10,11 +10,12 @@ public class Bullet : MonoBehaviour
 
     protected Vector3 velocity;
 
-    protected BulletType bulletType;
-    public void SetIndex(BulletType _index)
+    public BulletType BulletType { get; private set; }
+    public void SetType(BulletType _type)
     {
-        bulletType = _index;
+        BulletType = _type;
     }
+
 
     public void SetDirection(float _degrees, float _speed)
     {
@@ -46,6 +47,6 @@ public class Bullet : MonoBehaviour
             bulletSpark.gameObject.SetActive(true);
         }
 
-        ObjectPool.Instance.AddToBulletPool(this, bulletType);
+        ObjectPool.Instance.AddToBulletPool(this);
     }
 }

@@ -105,6 +105,9 @@ public class DialogueUI : Singleton<DialogueUI>
 
             //Set speaker labels + icon
             nameLabel.text = speaker.CharacterName;
+            ContentSizeFitter nameLabelFitter = nameLabel.gameObject.GetComponent<ContentSizeFitter>();
+            nameLabelFitter.enabled = false;
+            nameLabelFitter.enabled = true;
 
             //Set portrait and voice to override values, or default if null
             //Debug.Log("defaultSprite: ");

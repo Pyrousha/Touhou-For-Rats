@@ -5,7 +5,11 @@ public class GrazeHurtbox : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //TODO: Hit Graze
-        Debug.Log("Graze!");
-        UIController.Instance.GainScore(25);
+        if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.Grazable))
+        {
+            Player.Instance.ShowGrazeEffect();
+            AudioManager.Instance.Play(AudioType.GRAZE);
+            UIController.Instance.GainScore(250);
+        }
     }
 }

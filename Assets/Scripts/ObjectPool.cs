@@ -44,6 +44,7 @@ public class ObjectPool : Singleton<ObjectPool>
     private Dictionary<EnemyType, List<Enemy>> enemyTypeDictionary = new Dictionary<EnemyType, List<Enemy>>();
     private Dictionary<BulletType, List<Bullet>> bulletTypeDictionary = new Dictionary<BulletType, List<Bullet>>();
     private List<Enemy> aliveEnemies = new List<Enemy>();
+    private List<Bullet> activeBullets = new List<Bullet>();
 
     private void Start()
     {
@@ -177,11 +178,20 @@ public class ObjectPool : Singleton<ObjectPool>
         {
             Bullet objToReturn = listToUse[listToUse.Count - 1];
             listToUse.RemoveAt(listToUse.Count - 1);
+            if (activeBullets.Contains(objToReturn))
+                Debug.LogError("bwat!!!!");
+            else
+                activeBullets.Add(objToReturn);
             return objToReturn;
         }
 
         Bullet bullet = Instantiate(bulletsPrefabsDictionary[_index], bulletParent).GetComponent<Bullet>();
-        bullet.SetIndex(_index);
+        bullet.SetType(_index);
+
+        if (activeBullets.Contains(bullet))
+            Debug.LogError("ACTUALLY IMPOSSIBLE!!!!!!!");
+
+        activeBullets.Add(bullet);
 
         return bullet;
     }
@@ -191,15 +201,18 @@ public class ObjectPool : Singleton<ObjectPool>
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_objToAdd"></param>
-    public void AddToBulletPool(Bullet _objToAdd, BulletType _type)
+    public void AddToBulletPool(Bullet _objToAdd)
     {
-        if (!bulletTypeDictionary.TryGetValue(_type, out List<Bullet> listToUse))
+        BulletType type = _objToAdd.BulletType;
+        if (!bulletTypeDictionary.TryGetValue(type, out List<Bullet> listToUse))
         {
             listToUse = new List<Bullet>();
-            bulletTypeDictionary.Add(_type, listToUse);
+            bulletTypeDictionary.Add(type, listToUse);
         }
 
         listToUse.Add(_objToAdd);
+        if (!activeBullets.Remove(_objToAdd))
+            Debug.LogError("HOW_B!!!!");
         _objToAdd.gameObject.SetActive(false);
     }
 
@@ -232,4 +245,11 @@ public class ObjectPool : Singleton<ObjectPool>
         this.boss = boss;
     }
 
+    public void DestroyAllBullets()
+    {
+        while (activeBullets.Count > 0)
+        {
+            AddToBulletPool(activeBullets[activeBullets.Count - 1]);
+        }
+    }
 }

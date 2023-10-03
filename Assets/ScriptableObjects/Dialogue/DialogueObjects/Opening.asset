@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DialogueLines>k__BackingField:
   - Speaker: {fileID: 11400000, guid: baceecf543d542246a17f7cea92c6718, type: 2}
-    Text: We find our protagonist, Rattimus II, alone on the streets of a once-bustling
-      city. Investigating rumors about a curse, Rattimus is determined to get to
-      the bottom of this. Strangely, the casino seems to be the only business still
-      in operation.
+    Text: "We find our protagonist, Rattimus II, alone on the streets of a once-bustling
+      city. \nInvestigating rumors about a curse, Rattimus is determined to get to
+      the bottom of this. \nStrangely, the casino seems to be the only business still
+      in operation."
     OptionalOverrides:
       PortraitImageOverride: {fileID: 0}
       VoiceClipOverride: {fileID: 0}
