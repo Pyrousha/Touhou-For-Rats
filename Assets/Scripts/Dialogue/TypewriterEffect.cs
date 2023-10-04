@@ -55,6 +55,7 @@ public class TypewriterEffect : MonoBehaviour
         yield return null;
         LayoutElement layoutElement = textLabel.gameObject.GetComponent<LayoutElement>();
         layoutElement.enabled = false;
+        yield return null;
         layoutElement.enabled = true;
 
         TMP_TextInfo textInfo = textLabel.textInfo;
@@ -73,7 +74,7 @@ public class TypewriterEffect : MonoBehaviour
             voiceAudioSource.Play();
         }
 
-        yield return null;
+        yield return 0.025f;
 
         while (charIndex < textToType.Length - numBreaks * 4)
         {

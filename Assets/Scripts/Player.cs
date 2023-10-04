@@ -87,6 +87,12 @@ public class Player : Singleton<Player>
 
         if (DialogueUI.Instance.isOpen || Time.timeScale == 0)
         {
+            if (isCharging)
+            {
+                isCharging = false;
+                spriteAnim.SetTrigger("CancelCharge");
+            }
+
             hitboxObj.SetActive(false);
             return;
         }

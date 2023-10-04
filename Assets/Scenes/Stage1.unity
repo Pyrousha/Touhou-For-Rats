@@ -1895,13 +1895,17 @@ PrefabInstance:
       propertyPath: m_ReverseArrangement
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2308864022890802420, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3125413414625447095, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5946524623512729987, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8395646334006451319, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_MinHeight
@@ -3461,6 +3465,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3380775961676842362, guid: 8c934466df5ca0b4892159ceeb26b4ad, type: 3}
+      propertyPath: clips.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380775961676842362, guid: 8c934466df5ca0b4892159ceeb26b4ad, type: 3}
+      propertyPath: clips.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: e09e09b1d15440840b687be6b0a45696, type: 3}
+    - target: {fileID: 3380775961676842362, guid: 8c934466df5ca0b4892159ceeb26b4ad, type: 3}
+      propertyPath: clips.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 506a23e099ee98d419946d4038c762d5, type: 3}
     - target: {fileID: 6982534405775262338, guid: 8c934466df5ca0b4892159ceeb26b4ad, type: 3}
       propertyPath: m_Name
       value: AudioManager

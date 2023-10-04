@@ -59,7 +59,7 @@ public class UIController : Singleton<UIController>
     public void GainLife()
     {
         numLives = Mathf.Min(numLives + 1, livesIcons.Count);
-        AudioManager.Instance.Play(AudioType.PICKUP);
+        AudioManager.Instance.Play(AudioType.LIFEUP);
         SetLivesVisuals();
     }
 
@@ -149,6 +149,8 @@ public class UIController : Singleton<UIController>
 
     public void GotPickup(Pickup.PickupType type)
     {
+        AudioManager.Instance.Play(AudioType.PICKUP);
+
         switch (type)
         {
             case Pickup.PickupType.power:
@@ -234,6 +236,6 @@ public class UIController : Singleton<UIController>
 
     public void OnGameQuit()
     {
-        Application.Quit();
+        //Application.Quit();
     }
 }
