@@ -18,6 +18,8 @@ public class Lantern : Singleton<Lantern>
     [SerializeField] private float bulletSpread;
     [SerializeField] private float bulletSpeed;
 
+    [SerializeField] private Vector3 flameVelocityAddition;
+
     float lightHp = 1;
 
     private bool isInDark;
@@ -63,7 +65,7 @@ public class Lantern : Singleton<Lantern>
 
     private void SpawnBullets()
     {
-        Vector3 dir = rb.velocity.normalized;
+        Vector3 dir = ((Vector3)rb.velocity.normalized + flameVelocityAddition).normalized;
         float dirAngle = Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x) + Random.Range(-Bullet.RandSpread, Bullet.RandSpread);
 
         //Spawn bullets

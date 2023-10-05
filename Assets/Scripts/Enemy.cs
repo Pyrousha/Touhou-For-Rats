@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int numBullets;
     [SerializeField] private float reloadTime;
     private float nextShootTime;
-    [SerializeField] private int bulletSpread;
+    [SerializeField] private float bulletSpread;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private GameObject pickupPrefab;
 

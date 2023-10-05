@@ -171,7 +171,7 @@ public class Player : Singleton<Player>
                             Bullet bullet = ObjectPool.Instance.GetBulletOfType(BulletType.player);
                             bullet.transform.position = transform.position;
 
-                            bullet.SetDirection(deg + 90, bulletSpeed);
+                            bullet.SetDirection(90 + deg, bulletSpeed);
                             bullet.MoreForwardBy(bulletCircleOffsetFromPlayer);
 
                             bullet.gameObject.SetActive(true);
@@ -179,20 +179,7 @@ public class Player : Singleton<Player>
                     }
                     else
                     {
-                        ////even, 2 in front and then rest at sides
-                        //for (int i = -1; i <= 1; i += 2)
-                        //{
-                        //    //2 in front
-                        //    Bullet bullet = ObjectPool.Instance.GetBulletOfType(BulletType.player);
-                        //    bullet.transform.position = transform.position + new Vector3(bulletXOffsetFromPlayer * i, 0, 0);
-
-                        //    bullet.SetDirection(90, bulletSpeed);
-                        //    bullet.MoreForwardBy(bulletCircleOffsetFromPlayer);
-
-                        //    bullet.gameObject.SetActive(true);
-                        //}
-                        //int maxSpread = (numBullets - 2) * bulletSpread / 2;
-
+                        //Even, spread out evenly
                         float maxSpread = (numBullets - 1) * currBulletSpread / 2;
                         for (float deg = maxSpread; deg >= -maxSpread; deg -= currBulletSpread)
                         {

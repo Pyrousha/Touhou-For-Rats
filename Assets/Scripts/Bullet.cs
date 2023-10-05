@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     public void SetDirection(float _degrees, float _speed)
     {
-        transform.localEulerAngles = new Vector3(0, 0, _degrees - 90);
+        transform.localEulerAngles = new Vector3(0, 0, _degrees);
 
         float rads = Mathf.Deg2Rad * _degrees;
 

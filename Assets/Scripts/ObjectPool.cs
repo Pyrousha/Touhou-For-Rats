@@ -8,7 +8,9 @@ public class ObjectPool : Singleton<ObjectPool>
     {
         player,
         lanternFire,
-        enemy_circle
+        enemy_circle,
+        sandwich,
+        star
     }
 
     [System.Serializable]
@@ -21,7 +23,8 @@ public class ObjectPool : Singleton<ObjectPool>
     public enum EnemyType
     {
         eye,
-        skull
+        skull,
+        sniper
     }
 
     [System.Serializable]

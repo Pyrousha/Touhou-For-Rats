@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5955ad3b536f44408584951345e236f
+guid: 9b5e7e40da0a6ef4a961483c6d102bd0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638320667335260477
+  platformSettingsDirtyTick: 638320669949388175
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,67 +119,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bullet_star_Frame_0
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 21
-      width: 13
-      height: 7
-    spriteID: fe129bba4d46fba40a1248510c2e2848
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 21}
-  - name: bullet_star_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 51
-      width: 11
-      height: 7
-    spriteID: c62097d08f7457d47a40a6c4de5124ac
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 51}
-  - name: bullet_star_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 36
-      width: 13
-      height: 7
-    spriteID: 2cd90a63e16721b48b8a827c3897a461
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 36}
-  - name: bullet_star_Frame_3
+  - name: smolgus
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -189,8 +129,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 15
-      height: 9
-    spriteID: c32d05d45681caa4bbea736592a668fa
+      height: 16
+    spriteID: 8315372c2cc648c40b5fca3d63e1182e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -202,44 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -645985371
-    name: bullet_star
+    guid: 1817020506
+    name: smolgus
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bullet_star_Frame_0
+    - name: smolgus
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 4
-        width: 13
-        height: 7
-      spriteId: fe129bba4d46fba40a1248510c2e2848
-    - name: bullet_star_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 2
-        y: 4
-        width: 11
-        height: 7
-      spriteId: c62097d08f7457d47a40a6c4de5124ac
-    - name: bullet_star_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 1
-        y: 4
-        width: 13
-        height: 7
-      spriteId: 2cd90a63e16721b48b8a827c3897a461
-    - name: bullet_star_Frame_3
-      frameIndex: 3
-      cellRect:
         x: 0
-        y: 3
+        y: 0
         width: 15
-        height: 9
-      spriteId: c32d05d45681caa4bbea736592a668fa
+        height: 16
+      spriteId: 8315372c2cc648c40b5fca3d63e1182e
     linkedCells: []
     parentIndex: -1
   platformSettings:

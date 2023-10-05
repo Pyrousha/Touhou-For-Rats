@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638316930914009904
+  platformSettingsDirtyTick: 638320659504646405
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -139,6 +139,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: bullet_sandwich_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 20
+      width: 10
+      height: 7
+    spriteID: da0f655726c1e3d488e3a99b44baf35d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 20}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,7 +168,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: bullet_sandwich
+    - name: bullet_sandwich_Frame_0
       frameIndex: 0
       cellRect:
         x: 3
@@ -156,6 +176,14 @@ ScriptedImporter:
         width: 9
         height: 8
       spriteId: 6c4b7e58572c4ab4fb741e63f222e90a
+    - name: bullet_sandwich_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 3
+        y: 4
+        width: 10
+        height: 7
+      spriteId: da0f655726c1e3d488e3a99b44baf35d
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -184,6 +212,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048

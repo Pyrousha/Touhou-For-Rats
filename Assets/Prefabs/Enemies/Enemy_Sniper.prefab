@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5040572719518997864}
   - component: {fileID: 183382429852468780}
+  - component: {fileID: 8465931019880205234}
   - component: {fileID: 2500707529583224995}
   - component: {fileID: 2904233667427334397}
-  - component: {fileID: 4564096532206547876}
   m_Layer: 11
-  m_Name: Enemy_Skull
+  m_Name: Enemy_Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -2120456097
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -362662139433013900, guid: 37d101baa44ce96459e4a251054a7ed4, type: 3}
+  m_Sprite: {fileID: 171098194506908925, guid: 9b5e7e40da0a6ef4a961483c6d102bd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,6 +87,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8465931019880205234
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5272623626332460144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 48473f7091f714344ba2ce9703fa8e14, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &2500707529583224995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,14 +135,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelSpeed: 1
-  maxSpeed: 5.5
+  maxSpeed: 1.5
   frictionSpeed: 0.25
-  startingHp: 3
-  bulletType: 2
-  numBullets: 0
-  reloadTime: 2
-  bulletSpread: 10
-  bulletSpeed: 5
+  startingHp: 4
+  bulletType: 4
+  numBullets: 17
+  reloadTime: 3
+  bulletSpread: 3
+  bulletSpeed: 3
   pickupPrefab: {fileID: 3061804451959845734, guid: 8ecba216fe4146f45bccf97812b6cc59, type: 3}
 --- !u!50 &2904233667427334397
 Rigidbody2D:
@@ -136,38 +171,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &4564096532206547876
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5272623626332460144}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03125, y: 0.03125}
-  serializedVersion: 2
-  m_Radius: 0.34375
