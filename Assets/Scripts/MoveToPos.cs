@@ -19,9 +19,14 @@ public class MoveToPos : MonoBehaviour
         Routine.Start(StartCountdown());
     }
 
-    public IEnumerator StartCountdown()
+    private IEnumerator StartCountdown()
     {
         yield return timeToWaitToMove;
+        StartMoving();
+    }
+
+    public void StartMoving()
+    {
         moving = true;
     }
 

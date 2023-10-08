@@ -105,9 +105,10 @@ public class DialogueUI : Singleton<DialogueUI>
 
             //Set speaker labels + icon
             nameLabel.text = speaker.CharacterName;
-            VerticalLayoutGroup nameLabelLayout = nameLabel.transform.parent.GetComponent<VerticalLayoutGroup>();
-            nameLabelLayout.enabled = false;
-            nameLabelLayout.enabled = true;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(nameLabel.transform.parent.GetComponent<RectTransform>());
+            //VerticalLayoutGroup nameLabelLayout = nameLabel.transform.parent.GetComponent<VerticalLayoutGroup>();
+            //nameLabelLayout.enabled = false;
+            //nameLabelLayout.enabled = true;
 
             //Set portrait and voice to override values, or default if null
             //Debug.Log("defaultSprite: ");

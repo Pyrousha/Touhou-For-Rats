@@ -44,6 +44,8 @@ public class Player : Singleton<Player>
     private Rigidbody2D rb;
     private Vector2 facingDir;
 
+    public bool StageOver { get; set; } = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -85,7 +87,7 @@ public class Player : Singleton<Player>
         if (rb.velocity.sqrMagnitude > 0)
             facingDir = rb.velocity.normalized;
 
-        if (DialogueUI.Instance.isOpen || Time.timeScale == 0)
+        if (DialogueUI.Instance.isOpen || Time.timeScale == 0 || StageOver)
         {
             if (isCharging)
             {

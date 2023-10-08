@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static ObjectPool;
 
-public class Boss : MonoBehaviour
+public class Boss : Singleton<Boss>
 {
     [SerializeField] protected float accelSpeed;
     [SerializeField] protected float maxSpeed;
@@ -65,6 +65,7 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
+        BossHpController.Instance.StartFight(SpellCards.Count);
         StartNextSpellcard();
     }
 
@@ -98,7 +99,7 @@ public class Boss : MonoBehaviour
 
         currPosIndex = (currPosIndex + 1) % currSpellCard.PosAndAttacks.Count;
 
-        if (startPos > 0 && currPoses[startPos].TimeToWaitBeforeMovingNext > 0)
+        if (startPos >= 0 && currPoses[startPos].TimeToWaitBeforeMovingNext > 0)
         {
             isMoving = false;
             nextMoveTime = Time.time + currPoses[startPos].TimeToWaitBeforeMovingNext;
@@ -254,14 +255,23 @@ public class Boss : MonoBehaviour
 
         rb.velocity = Vector2.zero;
         dead = true;
+
+        Player.Instance.StageOver = true;
     }
 
     private void OnHit(float damage)
     {
+        if (dead)
+            return;
+
         dmgTaken += damage;
 
-        if (dmgTaken > currSpellCard.Hp)
+        float hpPercent = 1 - (dmgTaken / currSpellCard.Hp);
+        BossHpController.Instance.SetHp(hpPercent);
+
+        if (dmgTaken >= currSpellCard.Hp)
         {
+            BossHpController.Instance.LoseLife();
             StartNextSpellcard();
         }
 

@@ -51,56 +51,68 @@ MonoBehaviour:
   - {fileID: 5272623626332460144, guid: 2fb624fa9f5af4a4dbbd713c30bff2c6, type: 3}
   enemySpawnPattern_Serialized:
   - <enemyTypeIndices>k__BackingField: 00000000
-    <numEnemies>k__BackingField: 8
+    <numEnemies>k__BackingField: 4
     <startSpawnTime>k__BackingField: 1
     <spawnInterval>k__BackingField: 0.1
     <offsetPos>k__BackingField: {x: -0.75, y: 0, z: 0}
     <pathIndices>k__BackingField: 00000000
   - <enemyTypeIndices>k__BackingField: 00000000
-    <numEnemies>k__BackingField: 8
+    <numEnemies>k__BackingField: 4
     <startSpawnTime>k__BackingField: 5.5
     <spawnInterval>k__BackingField: 0.1
     <offsetPos>k__BackingField: {x: 0.75, y: 0, z: 0}
     <pathIndices>k__BackingField: 01000000
-  - <enemyTypeIndices>k__BackingField: 00000000
-    <numEnemies>k__BackingField: 9
-    <startSpawnTime>k__BackingField: 10
-    <spawnInterval>k__BackingField: 0.2
-    <offsetPos>k__BackingField: {x: 1, y: 0, z: 0}
+  - <enemyTypeIndices>k__BackingField: 02000000
+    <numEnemies>k__BackingField: 0
+    <startSpawnTime>k__BackingField: 9
+    <spawnInterval>k__BackingField: 2.5
+    <offsetPos>k__BackingField: {x: 8, y: 0, z: 0}
     <pathIndices>k__BackingField: 02000000
   - <enemyTypeIndices>k__BackingField: 00000000
-    <numEnemies>k__BackingField: 10
-    <startSpawnTime>k__BackingField: 16
+    <numEnemies>k__BackingField: 6
+    <startSpawnTime>k__BackingField: 12
+    <spawnInterval>k__BackingField: 0.1
+    <offsetPos>k__BackingField: {x: 1.5, y: 0, z: 0}
+    <pathIndices>k__BackingField: 02000000
+  - <enemyTypeIndices>k__BackingField: 00000000
+    <numEnemies>k__BackingField: 6
+    <startSpawnTime>k__BackingField: 17
     <spawnInterval>k__BackingField: 0.15
     <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
     <pathIndices>k__BackingField: 0000000001000000
   - <enemyTypeIndices>k__BackingField: 00000000
-    <numEnemies>k__BackingField: 8
-    <startSpawnTime>k__BackingField: 22
-    <spawnInterval>k__BackingField: 0.15
+    <numEnemies>k__BackingField: 6
+    <startSpawnTime>k__BackingField: 20.5
+    <spawnInterval>k__BackingField: 0.2
     <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
     <pathIndices>k__BackingField: 03000000
   - <enemyTypeIndices>k__BackingField: 00000000
     <numEnemies>k__BackingField: 8
-    <startSpawnTime>k__BackingField: 25
+    <startSpawnTime>k__BackingField: 26
     <spawnInterval>k__BackingField: 0.15
     <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
     <pathIndices>k__BackingField: 03000000
-  - <enemyTypeIndices>k__BackingField: 01000000
-    <numEnemies>k__BackingField: 10
-    <startSpawnTime>k__BackingField: 28.5
-    <spawnInterval>k__BackingField: 0.2
-    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
-    <pathIndices>k__BackingField: 06000000
   - <enemyTypeIndices>k__BackingField: 01000000
     <numEnemies>k__BackingField: 10
     <startSpawnTime>k__BackingField: 30
     <spawnInterval>k__BackingField: 0.2
     <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 06000000
+  - <enemyTypeIndices>k__BackingField: 01000000
+    <numEnemies>k__BackingField: 10
+    <startSpawnTime>k__BackingField: 33
+    <spawnInterval>k__BackingField: 0.2
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
     <pathIndices>k__BackingField: 05000000
   - <enemyTypeIndices>k__BackingField: 00000000
     <numEnemies>k__BackingField: 10
-    <startSpawnTime>k__BackingField: 32
+    <startSpawnTime>k__BackingField: 36
     <spawnInterval>k__BackingField: 0.1
     <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
     <pathIndices>k__BackingField: 0300000004000000
+  - <enemyTypeIndices>k__BackingField: ffffffff
+    <numEnemies>k__BackingField: 1
+    <startSpawnTime>k__BackingField: 41.5
+    <spawnInterval>k__BackingField: 0
+    <offsetPos>k__BackingField: {x: 0, y: 0, z: 0}
+    <pathIndices>k__BackingField: 00000000

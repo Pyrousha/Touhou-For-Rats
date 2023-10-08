@@ -24,7 +24,8 @@ public class ObjectPool : Singleton<ObjectPool>
     {
         eye,
         skull,
-        sniper
+        sniper,
+        Boss = -1
     }
 
     [System.Serializable]

@@ -107,11 +107,18 @@ public class EnemySpawner : MonoBehaviour
             EnemySpawn enemyToSpawn = (EnemySpawn)nextEnemy;
             EnemyType index = enemyToSpawn.enemyTypeIndex;
 
-            //Spawn that enemy
-            Enemy enemy = ObjectPool.Instance.GetEnemyOfType(index);
-            enemy.SetPath(indexToPathDict[enemyToSpawn.pathIndex], enemyToSpawn.offsetPos);
+            if (index == EnemyType.Boss)
+            {
+                Boss.Instance.GetComponent<MoveToPos>().StartMoving();
+            }
+            else
+            {
+                //Spawn that enemy
+                Enemy enemy = ObjectPool.Instance.GetEnemyOfType(index);
+                enemy.SetPath(indexToPathDict[enemyToSpawn.pathIndex], enemyToSpawn.offsetPos);
 
-            enemy.gameObject.SetActive(true);
+                enemy.gameObject.SetActive(true);
+            }
 
             GetNextEnemy();
         }

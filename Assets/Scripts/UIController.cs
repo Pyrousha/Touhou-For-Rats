@@ -65,7 +65,7 @@ public class UIController : Singleton<UIController>
 
     public void LoseLife()
     {
-        if (dying)
+        if (dying || Player.Instance.StageOver)
             return;
 
         dying = true;
@@ -102,6 +102,9 @@ public class UIController : Singleton<UIController>
 
     private void Update()
     {
+        if (Player.Instance.StageOver)
+            return;
+
         if (InputHandler.Instance.Cancel_Bomb.Down && numBombs > 0)
         {
             dying = false;

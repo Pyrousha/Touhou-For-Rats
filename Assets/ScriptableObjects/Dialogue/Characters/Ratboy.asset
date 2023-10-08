@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb1d7b5ed2c152419536425f7f28b9c, type: 3}
   m_Name: Ratboy
   m_EditorClassIdentifier: 
-  characterName: Ratboy!!
+  characterName: Rattimus II
   defaultPortraitSprite: {fileID: -4491468636836734551, guid: dd060f7d7ec334a49b5faba8106cfd2f, type: 3}
   defaultVoice: {fileID: 8300000, guid: 6c89e403ac7468f4b946736ea0ab02dd, type: 3}
   <OnRight>k__BackingField: 0
