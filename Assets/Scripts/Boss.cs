@@ -273,6 +273,7 @@ public class Boss : Singleton<Boss>
         {
             BossHpController.Instance.LoseLife();
             StartNextSpellcard();
+            AudioManager.Instance.Play(AudioType.BOSS_DEAD);
         }
 
         UIController.Instance.GainScore(10);

@@ -102,7 +102,7 @@ public class UIController : Singleton<UIController>
 
     private void Update()
     {
-        if (Player.Instance.StageOver)
+        if (Player.Instance == null || Player.Instance.StageOver)
             return;
 
         if (InputHandler.Instance.Cancel_Bomb.Down && numBombs > 0)

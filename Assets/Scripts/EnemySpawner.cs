@@ -123,4 +123,9 @@ public class EnemySpawner : MonoBehaviour
             GetNextEnemy();
         }
     }
+
+    public void OnStageFinished()
+    {
+        UIController.Instance.OnStageCleared();
+    }
 }
