@@ -36,14 +36,18 @@ public class ObjectPool : Singleton<ObjectPool>
     }
 
     [SerializeField] private GameObject prefab_bulletSpark;
+    [SerializeField] private GameObject prefab_pickup;
     [SerializeField] private List<BulletAndIndex> bullets;
     private Dictionary<BulletType, GameObject> bulletsPrefabsDictionary;
     [SerializeField] private List<EnemyAndIndex> enemies;
     private Dictionary<EnemyType, GameObject> enemyPrefabsDictionary;
+
     [Space(10)]
     [SerializeField] private Transform bulletSparkParent;
+    [SerializeField] private Transform pickupParent;
     [SerializeField] private Transform enemyParent;
     [SerializeField] private Transform bulletParent;
+
     private Dictionary<Type, List<MonoBehaviour>> listDictionary = new Dictionary<Type, List<MonoBehaviour>>();
     private Dictionary<EnemyType, List<Enemy>> enemyTypeDictionary = new Dictionary<EnemyType, List<Enemy>>();
     private Dictionary<BulletType, List<Bullet>> bulletTypeDictionary = new Dictionary<BulletType, List<Bullet>>();
@@ -70,6 +74,11 @@ public class ObjectPool : Singleton<ObjectPool>
         {
             prefabToUse = prefab_bulletSpark;
             parentToUse = bulletSparkParent;
+        }
+        else if (typeof(T) == typeof(Pickup))
+        {
+            prefabToUse = prefab_pickup;
+            parentToUse = pickupParent;
         }
         else
         {
@@ -101,7 +110,7 @@ public class ObjectPool : Singleton<ObjectPool>
     /// <param name="_objToAdd"></param>
     public void AddToPool<T>(T _objToAdd) where T : MonoBehaviour
     {
-        if ((typeof(T) != typeof(BulletSpark)))
+        if (typeof(T) != typeof(BulletSpark) && typeof(T) != typeof(Pickup))
         {
             Debug.LogError($"Wtf you doing bro, there is no pool of type \"{typeof(T)}\" to add to");
             return;

@@ -97,7 +97,9 @@ public class Enemy : MonoBehaviour
             nextShootTime = Time.time + reloadTime;
 
             Vector3 toPlayer = (Player.Instance.transform.position - transform.position).normalized;
-            float dirTowardsPlayer = Mathf.Rad2Deg * Mathf.Atan2(toPlayer.y, toPlayer.x) + Random.Range(-Bullet.RandSpread, Bullet.RandSpread);
+            float dirTowardsPlayer = Mathf.Rad2Deg * Mathf.Atan2(toPlayer.y, toPlayer.x);
+            float randAngle = Random.Range(-Bullet.RandSpread, Bullet.RandSpread);
+            dirTowardsPlayer += randAngle;
 
             //Spawn bullets
             float maxSpread = (numBullets - 1) * bulletSpread / 2;
@@ -205,7 +207,7 @@ public class Enemy : MonoBehaviour
             //Hit by bomb, take damage
             currHp -= Player.Instance.BombDamage;
             if (currHp <= 0)
-                ReturnToPool();
+                OnDeath();
         }
     }
 
@@ -215,10 +217,11 @@ public class Enemy : MonoBehaviour
         UIController.Instance.GainScore(100);
 
         // TODO replace w/ pools
-        GameObject drop = Instantiate(pickupPrefab);
-        drop.GetComponent<Pickup>().RollType();
-        drop.transform.position = transform.position;
+        Pickup pickup = ObjectPool.Instance.GetFromPool<Pickup>();
+        pickup.RollType();
+        pickup.transform.position = transform.position;
 
+        pickup.gameObject.SetActive(true);
 
         ReturnToPool();
     }

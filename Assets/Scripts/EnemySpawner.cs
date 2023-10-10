@@ -5,6 +5,7 @@ using static ObjectPool;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private bool startOnSceneStart;
     [SerializeField] private float DEBUG_START_TIME = 0;
 
     [System.Serializable]
@@ -79,6 +80,9 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         enemies = enemies.OrderByDescending(x => x.spawnTime).ToList();
+
+        if (startOnSceneStart)
+            StartLevel();
     }
 
     public void StartLevel()

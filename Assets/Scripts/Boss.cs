@@ -234,11 +234,6 @@ public class Boss : Singleton<Boss>
             //Hit by bullet, take damage
             OnHit(Player.Instance.KickDamage);
         }
-        //else if (LayerManager.IsInLayer(collision.gameObject.layer, LayerManager.Instance.BombLayer))
-        //{
-        //    //Hit by bomb, take damage
-        //    OnHit(Player.Instance.BombDamage);
-        //}
     }
 
     private void OnDeath()
@@ -247,7 +242,6 @@ public class Boss : Singleton<Boss>
             return;
 
         isMoving = false;
-        ObjectPool.Instance.DestroyAllBullets();
         GetComponent<DialogueActivator>().TryInteract();
 
         AudioManager.Instance.Play(AudioType.ENEMY_DEATH);
@@ -274,6 +268,7 @@ public class Boss : Singleton<Boss>
             BossHpController.Instance.LoseLife();
             StartNextSpellcard();
             AudioManager.Instance.Play(AudioType.BOSS_DEAD);
+            ObjectPool.Instance.DestroyAllBullets();
         }
 
         UIController.Instance.GainScore(10);

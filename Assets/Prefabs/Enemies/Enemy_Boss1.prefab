@@ -173,7 +173,7 @@ MonoBehaviour:
     <numBullets>k__BackingField: 7
     <numWaves>k__BackingField: 3
     <bulletSpread>k__BackingField: 45
-    <bulletSpeed>k__BackingField: 5
+    <bulletSpeed>k__BackingField: 4
     <bulletSpeedRand>k__BackingField: 0
     <spawnInterval>k__BackingField: 0.1
     <aimed>k__BackingField: 1
@@ -181,7 +181,7 @@ MonoBehaviour:
     <numBullets>k__BackingField: 1
     <numWaves>k__BackingField: 30
     <bulletSpread>k__BackingField: 45
-    <bulletSpeed>k__BackingField: 4
+    <bulletSpeed>k__BackingField: 3.5
     <bulletSpeedRand>k__BackingField: 2
     <spawnInterval>k__BackingField: 0.0275
     <aimed>k__BackingField: 0

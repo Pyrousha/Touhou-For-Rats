@@ -13,6 +13,7 @@ public class SceneTransitioner : Singleton<SceneTransitioner>
     public void PlayGame()
     {
         InGameScene = true;
+        UIController.Instance.OnStartNewGame();
         SceneManager.LoadScene(2);
     }
 }

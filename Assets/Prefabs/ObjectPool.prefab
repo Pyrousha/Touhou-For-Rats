@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604569468767820557}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab_bulletSpark: {fileID: 5792909391508595091, guid: fb151cc21fae3fe498a1b17b93b0228c, type: 3}
+  prefab_pickup: {fileID: 3061804451959845734, guid: 8ecba216fe4146f45bccf97812b6cc59, type: 3}
   bullets:
   - <Type>k__BackingField: 0
     <Prefab>k__BackingField: {fileID: 8316059807042401620, guid: 980870c1314517948bb9f43328085007, type: 3}
@@ -52,11 +53,18 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 8316059807042401620, guid: a1edf490d2f79be46bf6a6e93dcb826a, type: 3}
   - <Type>k__BackingField: 1
     <Prefab>k__BackingField: {fileID: 8316059807042401620, guid: 3f1dcd3a47647e140b85dedf797c7ff7, type: 3}
+  - <Type>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 8316059807042401620, guid: 8ba19339ada652948bf2b78e3f8b0135, type: 3}
+  - <Type>k__BackingField: 4
+    <Prefab>k__BackingField: {fileID: 8316059807042401620, guid: 6274e53d89e3b6b4da2cf9295c458ecf, type: 3}
   enemies:
   - <Type>k__BackingField: 0
     <Prefab>k__BackingField: {fileID: 5272623626332460144, guid: 2ffb1f5c381491d43b93f0296e735f0a, type: 3}
   - <Type>k__BackingField: 1
     <Prefab>k__BackingField: {fileID: 5272623626332460144, guid: 2fb624fa9f5af4a4dbbd713c30bff2c6, type: 3}
+  - <Type>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 5272623626332460144, guid: 9af9aa0bd6afe0d4887d95631885dbf0, type: 3}
   bulletSparkParent: {fileID: 0}
+  pickupParent: {fileID: 0}
   enemyParent: {fileID: 0}
   bulletParent: {fileID: 0}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Casino Croc
   defaultPortraitSprite: {fileID: -4369928031993893326, guid: 4019bcdf489e990488849284242114d2, type: 3}
-  defaultVoice: {fileID: 8300000, guid: 76c65470e4faace4bb0c4d5862dc0249, type: 3}
+  defaultVoice: {fileID: 8300000, guid: d8ddbee73fbdb414681e430853fe2c71, type: 3}
   <OnRight>k__BackingField: 1

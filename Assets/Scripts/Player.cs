@@ -52,6 +52,11 @@ public class Player : Singleton<Player>
         spriteAnim = sprRend.gameObject.GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        numBullets = 1 + UIController.Instance.Power / 10;
+    }
+
     // Update is called once per frame
     void Update()
     {
