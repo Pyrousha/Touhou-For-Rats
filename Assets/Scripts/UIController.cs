@@ -2,20 +2,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIController : Singleton<UIController>
 {
     [SerializeField] private Transform livesParent;
     [SerializeField] private Transform bombsParent;
-    [SerializeField] private GameObject continuePrompt;
-    [SerializeField] private GameObject buttonsParent;
+    [SerializeField] private TextMeshProUGUI continueText;
+    [SerializeField] private GameObject restartButton;
+    [SerializeField] private RectTransform buttonsParent;
+    [Space(5)]
     [SerializeField] private int numLives;
     [SerializeField] private int numBombs;
 
+    [Space(10)]
     [SerializeField] private TextMeshProUGUI hiScoreText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI powerText;
 
+    [Space(10)]
     [SerializeField] private GameObject stageEndUI;
     [SerializeField] private TextMeshProUGUI stageEndTitle;
     [SerializeField] private TextMeshProUGUI stageEndScore;
@@ -113,19 +118,6 @@ public class UIController : Singleton<UIController>
 
     private void Update()
     {
-        if (stageFinished && InputHandler.Instance.Interact_Shoot.Down)
-        {
-            continuePrompt.SetActive(false);
-            stageFinished = false;
-            stageEndUI.SetActive(false);
-            buttonsParent.SetActive(false);
-
-            Time.timeScale = 1;
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            return;
-        }
-
         if (Player.Instance == null || Player.Instance.StageOver)
             return;
 
@@ -230,29 +222,86 @@ public class UIController : Singleton<UIController>
         }
     }
 
+    public void OnStartNewGame()
+    {
+        Time.timeScale = 1;
+
+        stageFinished = false;
+        stageEndUI.SetActive(false);
+
+        score = 0;
+        dropCounter = 0;
+        power = 0;
+
+        numLives = startingLives;
+        numBombs = startingBombs;
+
+        SetLivesVisuals();
+        SetBombsVisuals();
+        powerText.text = power.ToString();
+
+        scoreText.text = score.ToString();
+    }
+
     public void OnGameOver()
     {
         Player.Instance.OnDie();
 
-        buttonsParent.SetActive(true);
-
         Time.timeScale = 0;
 
-        continuePrompt.SetActive(false);
         stageEndUI.SetActive(true);
+        restartButton.SetActive(true);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(buttonsParent);
+        buttonsParent.GetComponent<LinkSelectables>().Link();
+
+        continueText.text = "Continue";
+        continueText.transform.parent.GetComponent<Button>().Select();
+
         stageEndTitle.text = "You Died";
         stageEndHiScore.text = hiScore.ToString();
         stageEndScore.text = score.ToString();
     }
 
+    public void OnStageCleared()
+    {
+        Time.timeScale = 0;
+
+        stageEndUI.SetActive(true);
+        restartButton.SetActive(false);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(buttonsParent);
+        buttonsParent.GetComponent<LinkSelectables>().Link();
+
+        continueText.text = "Next Stage";
+        continueText.transform.parent.GetComponent<Button>().Select();
+
+        stageEndTitle.text = "Stage Clear!";
+        stageEndHiScore.text = hiScore.ToString();
+        stageEndScore.text = score.ToString();
+
+        stageFinished = true;
+
+        PlayerPrefs.SetInt(HISCORE_KEY, hiScore);
+        PlayerPrefs.Save();
+    }
+
     public void OnContinue()
     {
+        if (stageFinished)
+        {
+            stageFinished = false;
+            stageEndUI.SetActive(false);
+
+            Time.timeScale = 1;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            return;
+        }
+
+
         Time.timeScale = 1;
 
-        continuePrompt.SetActive(false);
         stageFinished = false;
         stageEndUI.SetActive(false);
-        buttonsParent.SetActive(false);
 
         score = 0;
         dropCounter = 0;
@@ -271,51 +320,15 @@ public class UIController : Singleton<UIController>
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void OnStartNewGame()
+    public void OnRestart()
     {
-        Time.timeScale = 1;
-
-        continuePrompt.SetActive(false);
-        stageFinished = false;
-        stageEndUI.SetActive(false);
-        buttonsParent.SetActive(false);
-
-        score = 0;
-        dropCounter = 0;
-        power = 0;
-
-        numLives = startingLives;
-        numBombs = startingBombs;
-
-        SetLivesVisuals();
-        SetBombsVisuals();
-        powerText.text = power.ToString();
-
-        scoreText.text = score.ToString();
-    }
-
-    public void OnStageCleared()
-    {
-        Time.timeScale = 0;
-
-        stageEndUI.SetActive(true);
-        stageEndTitle.text = "Stage Clear!";
-        stageEndHiScore.text = hiScore.ToString();
-        stageEndScore.text = score.ToString();
-
-        continuePrompt.SetActive(true);
-        stageFinished = true;
-
-        PlayerPrefs.SetInt(HISCORE_KEY, hiScore);
-        PlayerPrefs.Save();
+        SceneTransitioner.Instance.PlayGame();
     }
 
     public void OnGameQuit()
     {
-        continuePrompt.SetActive(false);
         stageFinished = false;
         stageEndUI.SetActive(false);
-        buttonsParent.SetActive(false);
 
         Time.timeScale = 1;
 

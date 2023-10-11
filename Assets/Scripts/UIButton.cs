@@ -24,6 +24,8 @@ public class UIButton : Button, ISelectHandler, IDeselectHandler
         graphics = new List<Graphic>(GetComponentsInChildren<Graphic>());
         button = GetComponent<Button>();
 
+        button.onClick.AddListener(delegate () { AudioManager.Instance.Play(AudioType.BUTTON_CLICK); });
+
         C_Selectable = GetComponent<Selectable>();
     }
 

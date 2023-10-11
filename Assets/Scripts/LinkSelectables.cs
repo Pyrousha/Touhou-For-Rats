@@ -40,7 +40,12 @@ public class LinkSelectables : MonoBehaviour
                 selectables.Add(childObj.GetComponent<Selectable>());
         }
 
-        LinkSpecified(selectables, numRows, numCols);
+        if (selectables.Count < numCols)
+            LinkSpecified(selectables, numCols, selectables.Count);
+        else if (selectables.Count < numRows)
+            LinkSpecified(selectables, selectables.Count, numCols);
+        else
+            LinkSpecified(selectables, numRows, numCols);
     }
 
     public static void LinkSpecified(List<Selectable> _selectables, int _numRows, int _numCols = 1)

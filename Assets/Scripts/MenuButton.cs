@@ -29,6 +29,7 @@ public class MenuButton : MonoBehaviour
             case ButtonType.Options:
                 break;
             case ButtonType.Quit:
+                Application.Quit();
                 break;
         }
     }
