@@ -1423,7 +1423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125822520374157353, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 57.155
       objectReference: {fileID: 0}
     - target: {fileID: 1125822520374157353, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1459,7 +1459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125822520812565545, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 1125822520812565545, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1607,7 +1607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125822522208806572, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 250.1
       objectReference: {fileID: 0}
     - target: {fileID: 1125822522208806572, guid: 170de7268c7c1764392f1602ccc7b1f0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3277,6 +3277,7 @@ GameObject:
   - component: {fileID: 1692974603}
   - component: {fileID: 1692974604}
   - component: {fileID: 1692974605}
+  - component: {fileID: 1692974606}
   m_Layer: 0
   m_Name: FX Canvas
   m_TagString: Untagged
@@ -3341,6 +3342,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1506927354}
+--- !u!114 &1692974606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692974602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 640, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &1726445001
 GameObject:
   m_ObjectHideFlags: 0

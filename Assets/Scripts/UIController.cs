@@ -11,6 +11,8 @@ public class UIController : Singleton<UIController>
     [SerializeField] private TextMeshProUGUI continueText;
     [SerializeField] private GameObject restartButton;
     [SerializeField] private RectTransform buttonsParent;
+    [SerializeField] private GameObject pauseParent;
+    [SerializeField] private Selectable resumeButton;
     [Space(5)]
     [SerializeField] private int numLives;
     [SerializeField] private int numBombs;
@@ -46,6 +48,8 @@ public class UIController : Singleton<UIController>
 
     private int power;
     public int Power => power;
+
+    private bool paused = false;
 
     public const string HISCORE_KEY = "HiScore";
 
@@ -116,10 +120,37 @@ public class UIController : Singleton<UIController>
         powerText.text = power.ToString();
     }
 
+    public void OnUnpause()
+    {
+        paused = false;
+        pauseParent.SetActive(paused);
+
+        if (paused)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
+    }
+
     private void Update()
     {
         if (Player.Instance == null || Player.Instance.StageOver)
             return;
+
+        if (InputHandler.Instance.Menu.Down && !DialogueUI.Instance.isOpen)
+        {
+            paused = !paused;
+            pauseParent.SetActive(paused);
+
+            if (paused)
+            {
+                Time.timeScale = 0;
+                resumeButton.Select();
+            }
+            else
+                Time.timeScale = 1;
+
+            return;
+        }
 
         if (InputHandler.Instance.Cancel_Bomb.Down && numBombs > 0)
         {

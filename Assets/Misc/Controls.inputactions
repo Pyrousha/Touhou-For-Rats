@@ -283,17 +283,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e3647039-7762-4d73-ae18-0a34035d4ad5",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1e9b051e-c40a-4915-a61b-192dec95f80d",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
@@ -404,7 +393,7 @@
                 },
                 {
                     "name": "",
-                    "id": "784aea2c-0087-4c24-9f7a-14b6cd7af5f5",
+                    "id": "8d677896-5289-431a-a645-0de602abde52",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
