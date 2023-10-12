@@ -61,13 +61,13 @@ public class InputHandler : Singleton<InputHandler>
         Down.Reset();
         Left.Reset();
         Right.Reset();
+
+        for (int i = 0; i < buttonCount; i++)
+            buttons[i].Reset();
     }
 
     private void FixedUpdate()
     {
-        for (int i = 0; i < buttonCount; i++)
-            buttons[i].Reset();
-
         if (bufferEnabled)
         {
             UpdateBuffer();

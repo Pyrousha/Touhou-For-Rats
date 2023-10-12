@@ -1191,12 +1191,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5997689622698377613}
     - target: {fileID: 6254187369571638995, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
+      propertyPath: SpellCards.Array.data[0].<PosAndAttacks>k__BackingField.Array.data[1].<BulletPatternIndex>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254187369571638995, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: SpellCards.Array.data[0].<PosAndAttacks>k__BackingField.Array.data[0].<TimeToWaitBeforeMovingNext>k__BackingField
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6254187369571638995, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: SpellCards.Array.data[0].<PosAndAttacks>k__BackingField.Array.data[1].<TimeToWaitBeforeMovingNext>k__BackingField
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6254187369571638995, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: SpellCards.Array.data[1].<PosAndAttacks>k__BackingField.Array.data[0].<TimeToWaitBeforeMovingNext>k__BackingField
@@ -3327,7 +3331,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 490641349
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &1692974605
 MonoBehaviour:

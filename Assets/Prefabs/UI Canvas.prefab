@@ -2075,10 +2075,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3475579458848521917}
-  - {fileID: 9185906529873914704}
   - {fileID: 8385637895423226964}
   - {fileID: 5675341895200996184}
+  - {fileID: 3475579458848521917}
+  - {fileID: 9185906529873914704}
   m_Father: {fileID: 5754117869145024043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.65}
@@ -3669,6 +3669,8 @@ MonoBehaviour:
   continueText: {fileID: 377663723301902528}
   restartButton: {fileID: 9026943048429041045}
   buttonsParent: {fileID: 4221063877266367471}
+  pauseParent: {fileID: 0}
+  resumeButton: {fileID: 0}
   numLives: 2
   numBombs: 2
   hiScoreText: {fileID: 7966717768936809083}

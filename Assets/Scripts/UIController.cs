@@ -123,20 +123,17 @@ public class UIController : Singleton<UIController>
     public void OnUnpause()
     {
         paused = false;
-        pauseParent.SetActive(paused);
+        pauseParent.SetActive(false);
 
-        if (paused)
-            Time.timeScale = 0;
-        else
-            Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 
     private void Update()
     {
-        if (Player.Instance == null || Player.Instance.StageOver)
+        if (Player.Instance == null || Player.Instance.StageOver || DialogueUI.Instance.isOpen)
             return;
 
-        if (InputHandler.Instance.Menu.Down && !DialogueUI.Instance.isOpen)
+        if (InputHandler.Instance.Menu.Down)
         {
             paused = !paused;
             pauseParent.SetActive(paused);
@@ -151,6 +148,9 @@ public class UIController : Singleton<UIController>
 
             return;
         }
+
+        if (paused)
+            return;
 
         if (InputHandler.Instance.Cancel_Bomb.Down && numBombs > 0)
         {
@@ -353,6 +353,8 @@ public class UIController : Singleton<UIController>
 
     public void OnRestart()
     {
+        OnUnpause();
+
         SceneTransitioner.Instance.PlayGame();
     }
 
@@ -361,7 +363,7 @@ public class UIController : Singleton<UIController>
         stageFinished = false;
         stageEndUI.SetActive(false);
 
-        Time.timeScale = 1;
+        OnUnpause();
 
         SceneManager.LoadScene(1);
     }

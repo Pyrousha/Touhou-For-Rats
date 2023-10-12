@@ -105,8 +105,8 @@ public class Boss : Singleton<Boss>
             nextMoveTime = Time.time + currPoses[startPos].TimeToWaitBeforeMovingNext;
         }
 
-        if (currPoses[currPosIndex].BulletPatternIndex >= 0)
-            currBulletPattern = patterns[currPoses[currPosIndex].BulletPatternIndex];
+        if (startPos >= 0 && currPoses[startPos].BulletPatternIndex >= 0)
+            currBulletPattern = patterns[currPoses[startPos].BulletPatternIndex];
         else
             currBulletPattern = null;
         firing = (currBulletPattern != null);
@@ -143,8 +143,6 @@ public class Boss : Singleton<Boss>
             {
                 dirTowardsPlayer = Random.Range(0, 360f);
             }
-
-
 
             //Spawn bullets
             float maxSpread = (((BulletPattern)currBulletPattern).numBullets - 1) * ((BulletPattern)currBulletPattern).bulletSpread / 2;

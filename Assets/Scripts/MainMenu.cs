@@ -1,17 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : Singleton<MainMenu>
 {
-    public bool IsAnimOver { get; private set; } = false;
+    private bool isAnimOver = false;
+
+    [SerializeField] private Selectable playButton;
+
+    private void Update()
+    {
+        if (InputHandler.Instance.Interact_Shoot.Down && !isAnimOver)
+        {
+            GetComponent<Animator>().SetTrigger("Skip");
+            OnAnimEnded();
+        }
+    }
 
     public void OnAnimEnded()
     {
-        IsAnimOver = true;
-    }
-
-    public void SkipIntro()
-    {
-        GetComponent<Animator>().SetTrigger("Skip");
-        IsAnimOver = true;
+        isAnimOver = true;
+        playButton.Select();
     }
 }

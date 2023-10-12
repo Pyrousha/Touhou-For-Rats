@@ -15,12 +15,6 @@ public class MenuButton : MonoBehaviour
 
     public void OnClick()
     {
-        if (!MainMenu.Instance.IsAnimOver)
-        {
-            MainMenu.Instance.SkipIntro();
-            return;
-        }
-
         switch (buttonType)
         {
             case ButtonType.Play:
