@@ -273,9 +273,9 @@ MonoBehaviour:
   bulletCircleOffsetFromPlayer: 1
   bulletXOffsetFromPlayer: 0.125
   reloadTime: 0.15
-  bulletSpread_min: 10
+  bulletSpread_min: 5
   bulletSpread_max: 10
-  bulletSpread_accel: 10
+  bulletSpread_accel: 25
   bulletSpeed: 15
   <KickDamage>k__BackingField: 5
   <BombDamage>k__BackingField: 10

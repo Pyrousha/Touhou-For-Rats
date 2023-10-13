@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Necromancer
   defaultPortraitSprite: {fileID: 3940568430266499304, guid: 710d4a17c496b3548aff4c7cce0da02a, type: 3}
-  defaultVoice: {fileID: 8300000, guid: 76c65470e4faace4bb0c4d5862dc0249, type: 3}
+  defaultVoice: {fileID: 8300000, guid: 25175180d2759af4899f3ff493797dce, type: 3}
   <OnRight>k__BackingField: 1

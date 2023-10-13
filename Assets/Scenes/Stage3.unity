@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 227071822}
   - component: {fileID: 227071823}
   m_Layer: 11
-  m_Name: Boss2Parent
+  m_Name: Boss3Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1126,11 +1126,11 @@ PrefabInstance:
     - target: {fileID: 183382429852468780, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2671904796925723411, guid: a4e54d062f8228140b9123021e81965a, type: 3}
+      objectReference: {fileID: -6051987453662286137, guid: cb68512c947d310418543d1679d8ad35, type: 3}
     - target: {fileID: 1012625528094449823, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8cea27dd5e71c974e98e7bb4ed5fa0c1, type: 2}
+      objectReference: {fileID: 11400000, guid: be95df7b4515a0f48ac2252080097e18, type: 2}
     - target: {fileID: 3170498895473170254, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: dialogueObject
       value: 
@@ -1146,7 +1146,7 @@ PrefabInstance:
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8cea27dd5e71c974e98e7bb4ed5fa0c1, type: 2}
+      objectReference: {fileID: 11400000, guid: be95df7b4515a0f48ac2252080097e18, type: 2}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: deleteAfterCopy
       value: 0
@@ -1157,27 +1157,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: events.Array.data[0].name
-      value: Alright, alright. You win. Just calm down now.
+      value: "I know when to admit defeat. I\u2019ll return to my realm. \r"
       objectReference: {fileID: 0}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: events.Array.data[1].name
-      value: Squeak.
+      value: Squeak squeak squeak squeak?
       objectReference: {fileID: 0}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: events.Array.data[2].name
-      value: "See that busted slot machine? Pull the arm and it\u2019ll open the
-        way to the basement for you. The \u2018mancer I hired to keep everyone here
-        is down there.\r"
+      value: "You think you can ask a favor of me now?\r"
       objectReference: {fileID: 0}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: events.Array.data[3].name
-      value: Squeak squeak.
+      value: "Squeak squeak. Squeak squeak squeak squeak squeak.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: events.Array.data[4].name
-      value: "See that busted slot machine? Pull the arm and it\u2019ll open the
-        way to the basement for you. The \u2018mancer I hired to keep everyone here
-        is down there.\r"
+      value: "Fine. I\u2019ll tell your wife you say \u201Chello.\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 3409224700268735191, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: events.Array.data[2].afterTextSpoken.m_PersistentCalls.m_Calls.Array.size
@@ -1226,7 +1222,7 @@ PrefabInstance:
     - target: {fileID: 4995426146917623305, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 11400000, guid: 0ef45215a3892dc4eb15b9f606bbf2bc, type: 2}
+      objectReference: {fileID: 11400000, guid: fd72a807e89ff264aa5f9391de8e2a39, type: 2}
     - target: {fileID: 5040572719518997864, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.26
@@ -1269,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272623626332460144, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: m_Name
-      value: Enemy_Boss2
+      value: Enemy_Boss3
       objectReference: {fileID: 0}
     - target: {fileID: 6254187369571638995, guid: 1e33a617b5102d744a5ac4fc708d7f9a, type: 3}
       propertyPath: SpellCards.Array.size
@@ -1353,25 +1349,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353d76216aa3a4a4ba47957f70c99ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 0ef45215a3892dc4eb15b9f606bbf2bc, type: 2}
+  dialogueObject: {fileID: 11400000, guid: fd72a807e89ff264aa5f9391de8e2a39, type: 2}
   events:
-  - name: "Ah, an outsider interferes with my business plan. Look, profits are up
-      600%. You wouldn\u2019t want me to disappoint the shareholders next quarter,
-      would you?\r"
+  - name: "The jig\u2019s up, it would seem. It was a good thing the croc and I had
+      going here. Money for both of us, and a rain of demons for me. Maybe it\u2019s
+      not too late for me to turn this around. \r"
     afterTextSpoken:
       m_PersistentCalls:
         m_Calls: []
-  - name: "Squeak squeak squeak?\r"
+  - name: "Squeak squeak squeak, squeak squeak squeak. Squeak squeak?\r"
     afterTextSpoken:
       m_PersistentCalls:
         m_Calls: []
-  - name: "Now why would I share my secrets with you? Don\u2019t want competition
-      souring my profits."
+  - name: "You\u2019re curious about my art? This incantation works like a magnet
+      for your soul. You can resist, but the closer you are, the stronger the casino
+      pulls on you, lures you. What I don\u2019t understand is how you could have
+      made it this far without succumbing to its influence."
     afterTextSpoken:
       m_PersistentCalls:
         m_Calls: []
-  - name: "I\u2019m going to teach you a thing or two about laissez-faire economics.
-      You know French? It means \u201Chands off!\u201D\r"
+  - name: "Half of my soul went with my wife \u2026 I\u2019m immune to your animancy.\r"
+    afterTextSpoken:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: And also this lantern casts a protective aura.
+    afterTextSpoken:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: "How tragic. Why don\u2019t I reunite you two?"
     afterTextSpoken:
       m_PersistentCalls:
         m_Calls:
@@ -2788,7 +2793,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8133624953868619320, guid: 939507a2950b7ca49a77b9430e96c12e, type: 3}
+  m_Sprite: {fileID: 6675563666476424243, guid: 939507a2950b7ca49a77b9430e96c12e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

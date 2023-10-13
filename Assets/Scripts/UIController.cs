@@ -38,7 +38,7 @@ public class UIController : Singleton<UIController>
     private bool dying = false;
     private float dieTime;
 
-    private int score;
+    public int Score { get; private set; }
     private static int hiScore;
 
     private int dropCounter;
@@ -46,8 +46,10 @@ public class UIController : Singleton<UIController>
 
     private bool stageFinished;
 
-    private int power;
-    public int Power => power;
+    public int Continues { get; private set; }
+    public int Power { get; private set; }
+    public int Deaths { get; private set; }
+    public int BombsUsed { get; private set; }
 
     private bool paused = false;
 
@@ -112,12 +114,12 @@ public class UIController : Singleton<UIController>
 
     public void GainPower()
     {
-        power++;
+        Power++;
 
-        if (power % 10 == 0)
+        if (Power % 10 == 0)
             Player.Instance.PickupNewBullet();
 
-        powerText.text = power.ToString();
+        powerText.text = Power.ToString();
     }
 
     public void OnUnpause()
@@ -163,6 +165,7 @@ public class UIController : Singleton<UIController>
         {
             //die
             numLives--;
+            Deaths++;
 
             PlayerHurtbox.Instance.GiveIFrames();
 
@@ -191,7 +194,10 @@ public class UIController : Singleton<UIController>
         if (numBombs > 0)
         {
             if (Bomb.Instance.Boom())
+            {
                 numBombs--;
+                BombsUsed++;
+            }
 
             SetBombsVisuals();
         }
@@ -222,7 +228,7 @@ public class UIController : Singleton<UIController>
 
     public Pickup.PickupType RollPickupType()
     {
-        if (score > scoreThreshold)
+        if (Score > scoreThreshold)
         {
             scoreThreshold += 20000;
             return Pickup.PickupType.life;
@@ -243,12 +249,12 @@ public class UIController : Singleton<UIController>
 
     public void GainScore(int _scoreToGain)
     {
-        score += _scoreToGain;
-        scoreText.text = score.ToString();
+        Score += _scoreToGain;
+        scoreText.text = Score.ToString();
 
-        if (score > hiScore)
+        if (Score > hiScore)
         {
-            hiScore = score;
+            hiScore = Score;
             hiScoreText.text = hiScore.ToString();
         }
     }
@@ -260,18 +266,22 @@ public class UIController : Singleton<UIController>
         stageFinished = false;
         stageEndUI.SetActive(false);
 
-        score = 0;
+        Score = 0;
         dropCounter = 0;
-        power = 0;
+        Power = 0;
+
+        Continues = 0;
+        Deaths = 0;
+        BombsUsed = 0;
 
         numLives = startingLives;
         numBombs = startingBombs;
 
         SetLivesVisuals();
         SetBombsVisuals();
-        powerText.text = power.ToString();
+        powerText.text = Power.ToString();
 
-        scoreText.text = score.ToString();
+        scoreText.text = Score.ToString();
     }
 
     public void OnGameOver()
@@ -290,7 +300,7 @@ public class UIController : Singleton<UIController>
 
         stageEndTitle.text = "You Died";
         stageEndHiScore.text = hiScore.ToString();
-        stageEndScore.text = score.ToString();
+        stageEndScore.text = Score.ToString();
     }
 
     public void OnStageCleared()
@@ -307,7 +317,7 @@ public class UIController : Singleton<UIController>
 
         stageEndTitle.text = "Stage Clear!";
         stageEndHiScore.text = hiScore.ToString();
-        stageEndScore.text = score.ToString();
+        stageEndScore.text = Score.ToString();
 
         stageFinished = true;
 
@@ -319,6 +329,7 @@ public class UIController : Singleton<UIController>
     {
         if (stageFinished)
         {
+            //This code is called when the player presses the "next stage" button after finishing a level
             stageFinished = false;
             stageEndUI.SetActive(false);
 
@@ -334,7 +345,8 @@ public class UIController : Singleton<UIController>
         stageFinished = false;
         stageEndUI.SetActive(false);
 
-        score = 0;
+        Continues++;
+        Score = 0;
         dropCounter = 0;
 
         numLives = startingLives;
@@ -343,12 +355,12 @@ public class UIController : Singleton<UIController>
         SetLivesVisuals();
         SetBombsVisuals();
 
-        scoreText.text = score.ToString();
+        scoreText.text = Score.ToString();
 
         PlayerPrefs.SetInt(HISCORE_KEY, hiScore);
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnRestart()
